@@ -1,4 +1,5 @@
 ---
+import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 const pageTitle = "博客";
 ---
@@ -12,9 +13,7 @@ const pageTitle = "博客";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">首页</a>
-    <a href="/about">关于</a>
-    <a href="/blog">博客</a>
+    <Navigation />
     <h1>{pageTitle}</h1>
     <ul>
       <li><a href="/posts/post-1">post 1</a></li>

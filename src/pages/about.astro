@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 const pageTitle = "关于";
 const identity = {
   name: "Astro",
@@ -7,6 +8,9 @@ const identity = {
 };
 const skills = ["HTML", "CSS", "JavaScript", "React", "Node.js"];
 let isLoading = false;
+let skillColor = "red";
+let fontWeight = "bold";
+let textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -16,6 +20,23 @@ let isLoading = false;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style
+      define:vars={{
+        skillColor,
+        fontWeight,
+        textCase,
+      }}
+    >
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
   </head>
   <body>
     <a href="/">首页</a>
@@ -28,7 +49,7 @@ let isLoading = false;
     <p>my hobbies are {identity.hobbies.join(", ")}</p>
     <h2>my skills</h2>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
     <h2>{isLoading ? "loading..." : "done"}</h2>
   </body>

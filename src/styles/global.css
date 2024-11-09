@@ -78,3 +78,19 @@ h1 {
     }
 }
 
+html.dark {
+    background-color: #0d0950;
+    color: #fff;
+}
+
+.dark .nav-links {
+    color: #fff;
+}
+.footer {
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
